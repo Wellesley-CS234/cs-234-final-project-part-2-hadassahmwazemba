@@ -59,7 +59,7 @@ merged_df = merged_df.dropna(subset=["region"])
 
 
 #User controls
-regions = st.multiselect("Filter by region", df["region"].unique(), default=df["region"].unique())
+regions = st.multiselect("Filter by region", merged_df["region"].unique(), default=merged_df["region"].unique())
 
 filtered_df = merged_df[merged_df["region"].isin(regions)]
 
