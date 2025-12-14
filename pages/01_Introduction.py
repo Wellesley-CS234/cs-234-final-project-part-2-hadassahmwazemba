@@ -16,34 +16,35 @@ st.write("By Hadassah Mwazemba")
 
 st.subheader("Research Question")
 st.write("""
-         For the following analysis, I am interested in a variety of ways
-         users on the English Wikipedia engage with articles about Africa on the
-         website.
+         In this analysis, I examine how users of the English Wikipedia engage with articles\
+         related to Africa.
          
-         With the data that I collected from wikidata and the Wikipedia 2023-2024 DPDP set, \
-         I decided to look at engagement with African-Related articles through the following \
-         lenses:
-            1. Which Countries are the most interested in these articles?
-            2. What is the nature of the most viewed articles that fit into this criteria?
+         Using data collected from Wikidata and the 2023-2024 Wikipedia DPDP dataset, \
+         I focus on patterns of engagement (page views) with Africa-related content.
+         
+         Specifically, this analysis addresses the following question:
+         
+         1. Which countries show the highest levels of engagement with \
+         African-related Wikipedia articles?
          
          As such my overall Research Question is:
-         
-          **What is the engagement of African-Related Wikipedia articles \
+
+         **What is the engagement of African-Related Wikipedia articles \
          in the English Wikipedia?**
-          """ )
+         """ )
 
 st.divider()
 
 st.subheader("Initial Expectations")
 st.write("""
-         My with this research question and its subsequent analysis is to how high \
-         or low the engagement with African-Related articles is on the English Wikipedia. 
-         
-         I expect to find the following:
-            1. The engagement is low with these articles.
-            2. Continents with Majority Speaking English countries such as the Americas and Europe have the highest Engagement
-            3. Articles about humans have the most Engangement in terms of views.
-          """ )
+         My goal with this research question and its subsequent analysis is to examine how high or low 
+         engagement with African-related articles is on the English Wikipedia.
+
+         Based on this, I expect the following:
+         1. Overall engagement with African-related articles will be relatively low.
+         2. Regions with a high concentration of English-speaking countries, such as the Americas and Europe, 
+         will exhibit the highest levels of engagement.
+         """ )
 
 
 st.divider()

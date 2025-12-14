@@ -22,7 +22,7 @@ st.subheader("Overview of the data metrics used for analysis")
 st.metric("Number of Countries:","92")
 st.metric("Number of rows(articles per day)","53205")
 st.metric("Wikipedia Project", "WikiProject Africa")
-st.metric("Date Range","02-06-2023 - 12-31-2024")
+st.metric("Date Range","02/06/2023 - 12/31/2024")
 
 
 st.divider()
