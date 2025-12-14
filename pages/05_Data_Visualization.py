@@ -95,11 +95,63 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 st.divider()
+st.subheader("Views Per Capita by Country")
+
+# year widget
+year_options = sorted(merged_df["year"].dropna().unique())
+year_choice = st.selectbox("Choose a year:", year_options, key="bar_year")
+
+df_year = merged_df[merged_df["year"] == year_choice].copy()
+
+# region widget
+region_options = sorted(df_year["region"].dropna().unique())
+region_choice = st.selectbox("Choose a region:", region_options, key="bar_region")
+
+df_region = df_year[df_year["region"] == region_choice].copy()
+
+
+top_default = (
+    df_region.sort_values("views_per_capita", ascending=False)
+             .head(5)["country"]
+             .tolist()
+)
+
+country_options = sorted(df_region["country"].dropna().unique())
+countries = st.multiselect(
+    "Select Countries:",
+    country_options,
+    default=top_default,
+    key="bar_countries"
+)
+
+plot_df = df_region[df_region["country"].isin(countries)].copy()
+
+if plot_df.empty:
+    st.warning("No data to plot")
+else:
+    plot_df = plot_df.sort_values("views_per_capita", ascending=False)
+
+    fig_bar = px.bar(
+        plot_df,
+        x="country",
+        y="views_per_capita",
+        hover_data={"views": True, "population": True, "region": True, "year": True},
+        title=f"Views per Capita (per 1M people) — {region_choice}, {year_choice}",
+    )
+
+    fig_bar.update_layout(xaxis_tickangle=-45)
+    st.plotly_chart(fig_bar, use_container_width=True)
+
+
+
+
+st.divider()
 st.header("Most Viewed Articles Per Country")
 
 year_select = st.selectbox(
     "Choose a year:",
-    sorted(df["year"].dropna().unique())
+    sorted(df["year"].dropna().unique()),
+    key="views_years"
 )
 
 df_year = df[df["year"] == year_select].copy()
@@ -109,7 +161,8 @@ if df_year.empty:
 else:
     country = st.selectbox(
         "Choose a country:",
-        sorted(df_year["country"].dropna().unique())
+        sorted(df_year["country"].dropna().unique()),
+        key="views_countries"
     )
 
     country_df = df_year[df_year["country"] == country].copy()
