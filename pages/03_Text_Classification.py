@@ -41,7 +41,7 @@ st.write("""
          
          1. Training the model.
             I used the description column to train the model
-            70% percent of the data was used training and 30% was used for testing
+            70% percent of the data was used training and 30% was used for testing.
             For the training data not about Africa, I filtered out all the QIDs \
             from the WikiProject Africa dataset in the DPDP set to ensure that the articles being used were not related\
             to the continent.
