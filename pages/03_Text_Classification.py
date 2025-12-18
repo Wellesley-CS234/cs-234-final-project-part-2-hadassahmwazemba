@@ -68,7 +68,8 @@ st.write("""
          I used the model to classify the articles that I had collected from the WikiProject Africa dataset \
          to find articles that were clearly and explicitly related to Africa for my analysis.""")
 
-st.write("Below is a snippet of the aricles after classification using the description \
+st.write("Below is a snippet of the articles that were labelled as African \
+         after classification using the description \
          column as the classifying input data")
 
 african_classified = pd.read_csv("data/african_classified.csv")
@@ -76,3 +77,4 @@ african_classified = pd.read_csv("data/african_classified.csv")
 african_classified = african_classified.drop(columns=['Unnamed: 0'])
 
 st.write(african_classified.tail(50))
+

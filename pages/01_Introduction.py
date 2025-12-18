@@ -50,6 +50,6 @@ st.write("""
 st.divider()
 
 st.subheader("Hypothesis")
-st.write("My Hpothesis for this Research topic is that **American and European \
+st.write("My Hypothesis for this Research topic is that **American and European \
          countries have the highest engagement with these articles in terms\
          of pageviews**")
